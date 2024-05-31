@@ -1,6 +1,24 @@
-import './assets/main.css'
+// import Vue from 'vue';
+// import App from './App.vue';
+// import router from './router';
+// import axios from 'axios';
 
-import { createApp } from 'vue'
-import App from './App.vue'
+// Vue.config.productionTip = false;
+// Vue.prototype.$http = axios;
 
-createApp(App).mount('#app')
+// new Vue({
+//   router,
+//   render: h => h(App)
+// }).$mount('#app');
+
+
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import axios from 'axios';
+
+const app = createApp(App);
+
+app.config.globalProperties.$http = axios;
+
+app.use(router).mount('#app');
